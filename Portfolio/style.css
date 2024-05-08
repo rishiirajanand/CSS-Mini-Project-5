@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Poppins&family=Quicksand:wght@300..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* base rule */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Urbanist", sans-serif;
+    /*  */
+    /* font-family: "Jost", sans-serif; */
+    /* font-family: "Quicksand", sans-serif; */
+}
+
+html{
+    font-size: 62.5%;
+    /* 1rem  = 10px */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-family: "Poppins", sans-serif;
+}
+
+p,li,a{
+    font-family: "Urbanist", sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 0.1rem;
+    font-weight: 400;
+
+    color: var(--para-color);
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+
+
+
+/* theme */
+
+:root{
+    --main-color: #0062ff;
+    --supporting-color: #ebf3fe;
+    --font-color: #424242;
+    /* --bg-color: #ffffff; */
+    --bg-color: #f7fcff;
+    --heading-color: #000a19;
+    --hero-heading-color: #003b99;
+    --white-color: #ffffff;
+    --para-color: #504e4d;
+    --bnt-hover-bg-color: #003b99;
+    --btn-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    --footer-bg-color: #040d12;
+}
+
+
+/* layout */
+
+.container{
+    width: 100%;
+    max-width: 142rem;
+    /* 142 = 1420px */
+    margin: 0 auto;
+    padding: 9.6rem 2.4rem;
+}
+
+
+
+
+/* module / resuable */
+
+/* states */
+
+/***** Navbar Section *****/ 
+
+.section-navbar{
+    width: 100%;
+    box-shadow: rgba(0,0,0,0.05) 0px 6px 24px 0px,
+    rgba(0, 0,0,0.08) 0px 0px 0px 1px;
+}
+
+.section-navbar , .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.section-navbar .navbar ul{
+    display: flex;
+    gap: 3.2rem;
+    text-transform: capitalize;
+
+    & li a{
+        color: var(--heading-color);
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 1.6rem;
+        position: relative;
+
+        &::after{
+            content: "";
+            position: absolute;
+            width: 0%;
+            border-bottom: 0.2rem solid var(--main-color);
+
+            bottom: -0.3rem;
+            left: 0;
+            transition: all 0.3s linear;
+        }
+    }
+
+    & li a:hover::after{
+        width: 100%;
+    }
+}
+
+
+/***** End Navbar Section *****/
+
+
